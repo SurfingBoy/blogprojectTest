@@ -21,4 +21,5 @@ urlpatterns = [
     # path('admin/', admin.site.urls),
     path('xadmin/',xadmin.site.urls),
     re_path('',include('blog.urls')),
+    re_path('',include('comment.urls'))
 ]

@@ -2,6 +2,8 @@ from django.db import models
 from datetime import datetime
 from users.models import UserProfile
 from django.urls import reverse
+import markdown
+from django.utils.html import strip_tags
 
 # Create your models here.
 
@@ -44,7 +46,7 @@ class Blog(models.Model):
     class Meta:
         verbose_name = u'博客'
         verbose_name_plural = verbose_name
-        ordering = ['-create_time']
+        ordering = ['-create_time', 'title']
 
     def __str__(self):
         return self.title
@@ -55,3 +57,14 @@ class Blog(models.Model):
 
     def get_absolute_url(self):
         return reverse('blog:detail',kwargs={'pk':self.pk}) #指blog应用里name=detail的函数
+
+    #摘要
+    def save(self,*args,**kwargs):
+        if not self.excerpt:
+            md = markdown.Markdown(extensions=[
+                'markdown.extensions.extra',
+                'markdown.extensions.codehilite',  # 语法高亮
+            ])
+            self.excerpt = strip_tags(md.convert(self.body))[:54]
+
+            super(Blog,self).save(*args,**kwargs)
