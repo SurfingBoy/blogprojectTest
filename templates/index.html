@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% block main %}
+    {% if error_msg %}
+        <p>{{ error_msg }}</p>
+    {% endif %}
     {% for blog in blog_list %}
         <article class="post post-1">
             <header class="entry-header">
@@ -42,12 +45,12 @@
     {% if is_paginated %}
     <div class="pagination">
         <a>页码：</a>
-        {# 第一页 #}
+{#         第一页#}
         {% if first %}
             <a href="?page=1">1</a>
         {% endif %}
 
-        {# 左边页码 #}
+{#         左边页码#}
         {% if left %}
             {% if left_has_more %}
                 <span>...</span>
@@ -57,10 +60,10 @@
             {% endfor %}
         {% endif %}
 
-        {# 当前页码 #}
+{#         当前页码#}
         <a href="?page={{ page_obj.number }}" style="color: red">{{ page_obj.number }}</a>
 
-        {# 右边页码 #}
+{#         右边页码#}
         {% if right %}
             {% for i in right %}
                 <a href="?page={{ i }}">{{ i }}</a>
@@ -70,7 +73,7 @@
             {% endif %}
         {% endif %}
 
-        {# 最后一页 #}
+{#         最后一页#}
         {% if last %}
             <a href="?page={{ paginator.num_pages }}">{{ paginator.num_pages }}</a>
         {% endif %}

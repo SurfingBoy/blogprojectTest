@@ -12,3 +12,7 @@ pillow==5.1.0
 
 markdown
 Pygments
+
+whoosh==2.7.4
+django_haystack==2.8.1
+jieba==0.39

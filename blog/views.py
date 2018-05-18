@@ -4,7 +4,8 @@ from blog.models import Blog,Category,Tag
 from comment.forms import CommentForm
 import markdown
 from django.views.generic import ListView,DetailView
-
+from django.utils.text import slugify
+from markdown.extensions.toc import TocExtension
 # Create your views here.
 
 #首页
@@ -105,7 +106,7 @@ def detail(request,pk):
     blog = get_object_or_404(Blog,pk=pk)
     #阅读量+1
     blog.increase_views()
-    blog.body = markdown.Markdown(blog.body,
+    blog.body = markdown.markdown(blog.body,
                                   extensions = [
                                       'markdown.extensions.extra',
                                       'markdown.extensions.codehilite', #语法高亮
@@ -131,17 +132,21 @@ class BlogDetailView(DetailView):
 
     def get(self,request,*args,**kwargs):
         response = super(BlogDetailView,self).get(request,*args,**kwargs)
+        #阅读量+1
         self.object.increase_views()
         return response
+
     def get_object(self, queryset=None):
         blog = super(BlogDetailView,self).get_object(queryset=None)
-        blog.body = markdown.Markdown(blog.body,
-                                      extensions=[
+        md = markdown.Markdown(extensions=[
                                           'markdown.extensions.extra',
                                           'markdown.extensions.codehilite',  # 语法高亮
-                                          'markdown.extensions.toc',  # 自动生成目录
+                                          TocExtension(slugify=slugify),
                                       ])
+        blog.body = md.convert(blog.body)
+        blog.toc = md.toc
         return blog
+
     def get_context_data(self, **kwargs):
         context = super(BlogDetailView,self).get_context_data(**kwargs)
         form = CommentForm()

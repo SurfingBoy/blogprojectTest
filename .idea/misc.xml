@@ -4,8 +4,4 @@
     <preferredVcsName>ApexVCS</preferredVcsName>
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.5.4 virtualenv at F:\Envs\blogproject" project-jdk-type="Python SDK" />
-  <component name="VagrantProjectSettings">
-    <option name="instanceFolder" value="" />
-    <option name="provider" value="" />
-  </component>
 </project>

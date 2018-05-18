@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'haystack',
     'blog',
     'comment',
     'users',
@@ -46,6 +47,18 @@ INSTALLED_APPS = [
 
 #此处重载为了UserProfile生效
 AUTH_USER_MODEL = 'users.UserProfile'
+
+#搜索,指定搜索引擎和索引文件需要存放的位置
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'blog.whoosh_cn_backend.WhooshEngine',
+        'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+    },
+}
+#搜索结果每页10项
+HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
+#每当有文章更新时，更新索引
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -9,8 +9,8 @@ urlpatterns = [
     #re_path('^$',views.index,name='index'),
     re_path('^$',views.IndexView.as_view(),name='index'),
 
-    #re_path('^blog/(?P<pk>[0-9]+)/$',views.detail,name='detail'),
-    re_path('^blog/(?P<pk>[0-9]+)/$', views.BlogDetailView.as_view(), name='detail'),
+    re_path('^blog/(?P<pk>[0-9]+)/$',views.detail,name='detail'),
+    #re_path('^blog/(?P<pk>[0-9]+)/$', views.BlogDetailView.as_view(), name='detail'),
 
     #re_path('^archives/(?P<year>[0-9]{4})/(?P<month>[0-9]{1,2})/$',views.archives,name='archives'),
     re_path('^archives/(?P<year>[0-9]{4})/(?P<month>[0-9]{1,2})/$',views.ArchivesView.as_view(),name='archives'),
