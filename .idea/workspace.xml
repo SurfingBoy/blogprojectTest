@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfec6a69-ca22-49f7-8f6c-505908ce17c0" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/blog/feeds.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/blog/search_indexes.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/search/indexes/blog/blog_text.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/urls.py" afterPath="$PROJECT_DIR$/blog/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/views.py" afterPath="$PROJECT_DIR$/blog/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blogprojectTest/settings.py" afterPath="$PROJECT_DIR$/blogprojectTest/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blogprojectTest/urls.py" afterPath="$PROJECT_DIR$/blogprojectTest/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirement.txt" afterPath="$PROJECT_DIR$/requirement.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/custom.css" afterPath="$PROJECT_DIR$/static/css/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/detail.html" afterPath="$PROJECT_DIR$/templates/detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/blog/index.html" afterPath="$PROJECT_DIR$/templates/search/search.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -107,8 +93,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="42" lean-forward="true" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+            <state relative-caret-position="289">
+              <caret line="17" column="87" lean-forward="true" selection-start-line="17" selection-start-column="87" selection-end-line="17" selection-end-column="87" />
               <folding>
                 <marker date="1526636295753" expanded="false" signature="2468:2478" ph="..." />
               </folding>
@@ -400,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1526552036069</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="订阅，自动生成文章目录，全文检索">
+      <created>1526637706070</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1526637706070</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -450,7 +443,8 @@
     <MESSAGE value="基本功能" />
     <MESSAGE value="将view改为类视图" />
     <MESSAGE value="统计文章，标签" />
-    <option name="LAST_COMMIT_MESSAGE" value="统计文章，标签" />
+    <MESSAGE value="订阅，自动生成文章目录，全文检索" />
+    <option name="LAST_COMMIT_MESSAGE" value="订阅，自动生成文章目录，全文检索" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -876,8 +870,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="42" lean-forward="true" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+        <state relative-caret-position="289">
+          <caret line="17" column="87" lean-forward="true" selection-start-line="17" selection-start-column="87" selection-end-line="17" selection-end-column="87" />
           <folding>
             <marker date="1526636295753" expanded="false" signature="2468:2478" ph="..." />
           </folding>
