@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '99_h$noznd$if_pbx#4lb*-b#+p9&bd&!fe(0v_uz37c1%vi$)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['10.0.70.130','127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
