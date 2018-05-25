@@ -13,6 +13,14 @@ def index(request):
     blog_list = Blog.objects.all().order_by('-create_time')
     return render(request,'index.html',context={'blog_list':blog_list})
 
+def fullIndex(request):
+    blog_list = Blog.objects.all().order_by('-create_time')
+    return render(request,'full-width.html',context={'blog_list':blog_list})
+def about(request):
+    return render(request,'about.html')
+def contact(request):
+    return render(request,'contact.html')
+
 class IndexView(ListView):
     model = Blog
     template_name = 'index.html'

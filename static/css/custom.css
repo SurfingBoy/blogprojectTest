@@ -219,7 +219,7 @@ img {
 }
 
 .entry-title {
-    text-align: left;
+    text-align: center;
     font-size: 1.9em;
     margin-bottom: 20px;
     line-height: 1.6;
@@ -227,7 +227,7 @@ img {
 }
 
 .entry-meta {
-    text-align: left;
+    text-align: center;
     color: #DDDDDD;
     font-size: 13px;
     margin-bottom: 30px;

@@ -4,6 +4,8 @@ from users.models import UserProfile
 from django.urls import reverse
 import markdown
 from django.utils.html import strip_tags
+import logging
+logging.basicConfig(level=logging.INFO)
 
 # Create your models here.
 
@@ -53,7 +55,7 @@ class Blog(models.Model):
 
     def increase_views(self):
         self.views += 1
-        self.save(update_fields= ['views'])
+        super(Blog,self).save()
 
     def get_absolute_url(self):
         return reverse('blog:detail',kwargs={'pk':self.pk}) #指blog应用里name=detail的函数
@@ -65,6 +67,6 @@ class Blog(models.Model):
                 'markdown.extensions.extra',
                 'markdown.extensions.codehilite',  # 语法高亮
             ])
-            self.excerpt = strip_tags(md.convert(self.body))[:54]
+            self.excerpt = strip_tags(md.convert(self.body))[:102]
 
             super(Blog,self).save(*args,**kwargs)
